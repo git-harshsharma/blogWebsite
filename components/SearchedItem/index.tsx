@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/Link";
+import Link from "next/link";
 
 import { BlogsStructure } from "../../utils/interfaces";
 import { BASE_URL, ROUTES } from "../../utils/Constants";

@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/Link";
+import Link from "next/link";
 
 import HeaderComponent from "../../../components/HeaderComponent";
 import PageHeading from "../../../components/PageHeading";
