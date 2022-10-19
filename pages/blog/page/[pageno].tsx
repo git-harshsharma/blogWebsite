@@ -4,7 +4,7 @@ import Link from "next/link";
 import HeaderComponent from "../../../components/HeaderComponent";
 import PageHeading from "../../../components/PageHeading";
 import { BlogsStructure } from "../../../utils/interfaces";
-import BlogCard from "../../../components/BlogCard/Index";
+import BlogCard from "../../../components/BlogCard";
 import AllCategories from "../../../components/AllCategories";
 import { BASE_URL, ROUTES, BLOGS_PER_PAGE } from "../../../utils/Constants";
 import PageNumber from "../../../components/PageNumber";

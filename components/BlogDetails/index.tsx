@@ -7,7 +7,7 @@ interface Props {
   itemData?: BlogsStructure;
 }
 
-const Index = ({ itemData }: Props) => {
+const index = ({ itemData }: Props) => {
   return (
     <>
       <PageHeading pageHeading={`${itemData?.title}`} />
@@ -47,4 +47,4 @@ const Index = ({ itemData }: Props) => {
   );
 };
 
-export default Index;
+export default index;

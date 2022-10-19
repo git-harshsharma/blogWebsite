@@ -6,7 +6,7 @@ interface props {
   href?: string;
 }
 
-const Index = ({ title, href }: props) => {
+const index = ({ title, href }: props) => {
   return (
     <>
       <Link href={href}>
@@ -18,4 +18,4 @@ const Index = ({ title, href }: props) => {
   );
 };
 
-export default Index;
+export default index;

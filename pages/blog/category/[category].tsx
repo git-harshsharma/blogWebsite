@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import HeaderComponent from "../../../components/HeaderComponent";
 import PageHeading from "../../../components/PageHeading";
-import BlogCard from "../../../components/BlogCard/Index";
+import BlogCard from "../../../components/BlogCard";
 import { BlogsStructure } from "../../../utils/interfaces";
 import AllCategories from "../../../components/AllCategories";
 import { BASE_URL, ROUTES } from "../../../utils/Constants";

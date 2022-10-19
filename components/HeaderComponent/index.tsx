@@ -5,7 +5,7 @@ import SearchedItem from "../SearchedItem";
 import { BlogsStructure } from "../../utils/interfaces";
 import { BASE_URL, ROUTES } from "../../utils/Constants";
 
-const Index = () => {
+const index = () => {
   const [data, setData] = useState<BlogsStructure[]>([]);
   const [searchString, setSearchString] = useState<string>("");
   const [searchedData, setSearchedData] = useState<BlogsStructure[]>([]);
@@ -142,4 +142,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default index;
