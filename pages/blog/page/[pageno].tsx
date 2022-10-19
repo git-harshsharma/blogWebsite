@@ -4,7 +4,7 @@ import Link from "next/link";
 import HeaderComponent from "../../../components/HeaderComponent";
 import PageHeading from "../../../components/PageHeading";
 import { BlogsStructure } from "../../../utils/interfaces";
-import BlogCard from "../../../components/BlogCard";
+import BlogCard from "../../../components/BlogCard/Index";
 import AllCategories from "../../../components/AllCategories";
 import { BASE_URL, ROUTES, BLOGS_PER_PAGE } from "../../../utils/Constants";
 import PageNumber from "../../../components/PageNumber";
@@ -36,27 +36,27 @@ const DynamicPage = ({ data, categories, pageNumbers, pageno }: props) => {
             </div>
             <div className="mt-10">
               {pageno > 1 ? (
-                <NavPage href={`${prevpage}`} active={true} text="<" />
+                <NavPage href={`${prevpage}`} active={true} text="<" key={'prevnav_1'} />
               ) : (
-                <NavPage active={false} text="<" />
+                <NavPage active={false} text="<" key={'prevnav_2'}/>
               )}
 
-              {pageNumbers.map((singlePage:number) => {
+              {pageNumbers.map((singlePage:number, key: number) => {
                 return (
                   <>
                     {singlePage == pageno ? (
-                      <PageNumber number={singlePage} active={true} />
+                      <PageNumber number={singlePage} key={key} active={true} />
                     ) : (
-                      <PageNumber number={singlePage} active={false} />
+                      <PageNumber number={singlePage} key={key} active={false} />
                     )}
                   </>
                 );
               })}
 
               {pageno < pageNumbers.length ? (
-                <NavPage href={`${nextpage}`} active={true} text=">" />
+                <NavPage href={`${nextpage}`} active={true} text=">" key={'nextnav_1'}/>
               ) : (
-                <NavPage active={false} text=">" />
+                <NavPage active={false} text=">" key={'nextnav_1'} />
               )}
 
             </div>

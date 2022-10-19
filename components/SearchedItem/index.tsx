@@ -8,7 +8,7 @@ interface props {
   itemData?: BlogsStructure;
 }
 
-const index = ({ itemData }: props) => {
+const Index = ({ itemData }: props) => {
   return (
     <>
       <Link href={`${BASE_URL}${ROUTES.blogDetailsRoute}/${itemData?.id}`}>
@@ -27,4 +27,4 @@ const index = ({ itemData }: props) => {
   );
 };
 
-export default index;
+export default Index;

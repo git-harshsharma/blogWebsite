@@ -6,7 +6,7 @@ interface props {
     href?:string;
 }
 
-const index = ({active, text, href}:props) => {
+const Index = ({active, text, href}:props) => {
   return (
     <>
     {active?(
@@ -26,4 +26,4 @@ const index = ({active, text, href}:props) => {
   )
 }
 
-export default index
+export default Index

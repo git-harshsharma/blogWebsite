@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 
-import SearchedItem from "../../components/SearchedItem";
+import SearchedItem from "../SearchedItem";
 import { BlogsStructure } from "../../utils/interfaces";
 import { BASE_URL, ROUTES } from "../../utils/Constants";
 
-const index = () => {
+const Index = () => {
   const [data, setData] = useState<BlogsStructure[]>([]);
   const [searchString, setSearchString] = useState<string>("");
   const [searchedData, setSearchedData] = useState<BlogsStructure[]>([]);
@@ -142,4 +142,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

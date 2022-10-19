@@ -4,7 +4,7 @@ interface Props {
   pageHeading?: String;
 }
 
-const index = ({ pageHeading }: Props) => {
+const Index = ({ pageHeading }: Props) => {
   return (
     <>
       <h1 className="text-5xl font-bold capitalize">{pageHeading}</h1>
@@ -13,4 +13,4 @@ const index = ({ pageHeading }: Props) => {
   );
 };
 
-export default index;
+export default Index;

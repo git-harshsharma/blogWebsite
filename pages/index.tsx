@@ -1,7 +1,7 @@
 import React from "react";
 
 import HeaderComponent from "../components/HeaderComponent";
-import BlogCard from "../components/BlogCard";
+import BlogCard from "../components/BlogCard/Index";
 import { BlogsStructure } from "../utils/interfaces";
 import PageHeading from "../components/PageHeading";
 import { BASE_URL, ROUTES } from "../utils/Constants";
