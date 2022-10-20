@@ -4,11 +4,10 @@ import { BlogsStructure } from "../../utils/interfaces";
 import PageHeading from "../PageHeading";
 
 interface Props {
-  itemData?: BlogsStructure;
+  itemData ?: BlogsStructure;
 }
 
-const index = ({ itemData }: Props) => {
-  return (
+const BlogDetails = ({ itemData }: Props) => (
     <>
       <PageHeading pageHeading={`${itemData?.title}`} />
       <div className="shadow-2xl rounded-md px-10 py-5 mt-5 flex justify-start gap-8 w-auto items-center">
@@ -44,7 +43,6 @@ const index = ({ itemData }: Props) => {
         </div>
       </div>
     </>
-  );
-};
+);
 
-export default index;
+export default BlogDetails;

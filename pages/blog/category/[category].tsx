@@ -14,7 +14,7 @@ interface props {
   categories: string[];
 }
 
-const DynamicPage = ({ data, category, categories }: props) => {
+const CategoryPage = ({ data, category, categories }: props) => {
   return (
     <>
       <HeaderComponent />
@@ -70,4 +70,4 @@ export async function getServerSideProps({
 
   return { props: { data, category, categories } };
 }
-export default DynamicPage;
+export default CategoryPage;

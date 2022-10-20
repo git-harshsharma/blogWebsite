@@ -16,7 +16,7 @@ interface props {
   pageNumbers:number[];
   pageno:number;
 }
-const DynamicPage = ({ data, categories, pageNumbers, pageno }: props) => {
+const Pagination = ({ data, categories, pageNumbers, pageno }: props) => {
 
   let nextpage:number = Number(pageno)+1;
   let prevpage:number = Number(pageno)-1;
@@ -110,4 +110,4 @@ export async function getServerSideProps({
   return { props: { data, categories, pageNumbers, pageno } };
 }
 
-export default DynamicPage;
+export default Pagination;

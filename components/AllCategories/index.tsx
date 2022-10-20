@@ -2,20 +2,18 @@ import React from "react";
 import Link from "next/link";
 
 interface props {
-  title?: String;
+  title?: string;
   href?: string;
 }
 
-const index = ({ title, href }: props) => {
-  return (
-    <>
-      <Link href={href}>
-        <span className="cursor-pointer p-2 w-full text-md capitalize">
-          {title}
-        </span>
-      </Link>
-    </>
-  );
-};
+const AllCategories = ({ title, href }: props) => (
+  <>
+    <Link href={href}>
+      <span className="cursor-pointer p-2 w-full text-md capitalize">
+        {title}
+      </span>
+    </Link>
+  </>
+);
 
-export default index;
+export default AllCategories;

@@ -2,14 +2,14 @@ import React from "react";
 
 import HeaderComponent from "../../components/HeaderComponent";
 import BlogDetails from "../../components/BlogDetails";
-import { BASE_URL, ROUTES } from "../.././utils/Constants";
+import { BASE_URL, ROUTES } from "../../utils/Constants";
 import { BlogsStructure } from "../../utils/interfaces";
 
 interface props {
   data ?: BlogsStructure
 }
 
-const DynamicPage = ({ data }: props) => {
+const BlogDetail = ({ data }: props) => {
   return (
     <>
       <HeaderComponent />
@@ -32,4 +32,4 @@ export async function getServerSideProps({
 
   return { props: { data } };
 }
-export default DynamicPage;
+export default BlogDetail;

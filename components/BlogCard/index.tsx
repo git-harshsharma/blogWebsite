@@ -5,11 +5,10 @@ import { BlogsStructure } from "../../utils/interfaces";
 import { BASE_URL, ROUTES } from "../../utils/Constants";
 
 interface Props {
-  itemData?: BlogsStructure;
+  itemData ?: BlogsStructure;
 }
 
-const Index = ({ itemData }: Props) => {
-  return (
+const BlogCard = ({ itemData } : Props) => (
     <>
       <Link href={`${BASE_URL}${ROUTES.blogDetailsRoute}/${itemData?.id}`}>
         <div className="shadow-lg rounded-md px-10 py-5 mt-2 hover:shadow-xl transition delay-75 cursor-pointer">
@@ -43,6 +42,6 @@ const Index = ({ itemData }: Props) => {
       </Link>
     </>
   );
-};
 
-export default Index;
+
+export default BlogCard;

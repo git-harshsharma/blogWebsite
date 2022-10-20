@@ -6,7 +6,7 @@ interface props {
     active?: boolean;
 }
 
-const index = ({number, active}:props) => {
+const PageNumber = ({number, active}:props) => {
   return (
     <>  
     <Link href ={`${number}`}>
@@ -26,4 +26,4 @@ const index = ({number, active}:props) => {
   )
 }
 
-export default index
+export default PageNumber
