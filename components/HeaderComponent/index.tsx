@@ -12,26 +12,15 @@ const HeaderComponent = () => {
 
   useEffect((): void => {
     async function listUniqueTags() {
-      const res = await fetch(`${BASE_URL}${ROUTES.blogsRoute}?all=true`);
+      const res = await fetch(`${ROUTES.blogsRoute}?all=true`);
       const fetchData = await res.json();
       setData(fetchData);
     }
     listUniqueTags();
   }, []);
 
-  const debounce = (func) => {
-    let timer;
-    return function (...args) {
-      const context = this;
-      if (timer) clearTimeout(timer);
-      timer = setTimeout(() => {
-        timer = null;
-        func.apply(context, args);
-      }, 500);
-    };
-  };
-
-  const handleChange = (value: string) => {
+  
+  const searchBlogs = (value: string) => {
     setSearchString(value);
     console.log(value);
     let filterData:BlogsStructure[] = [];
@@ -49,7 +38,7 @@ const HeaderComponent = () => {
     }
   };
 
-  const searchBlogs = useCallback(debounce(handleChange), []);
+
 
   return (
     <>
@@ -91,7 +80,7 @@ const HeaderComponent = () => {
                 d="M8.25 4.5l7.5 7.5-7.5 7.5"
               />
             </svg>
-            <Link href={`${BASE_URL}/`}>DevSpace</Link>
+            <Link href={`/`}>DevSpace</Link>
           </div>
           <div className="uppercase flex justify-evenly w-40">
             <Link href={`${ROUTES.blogsPageRoute}/1`}>BLOG</Link>

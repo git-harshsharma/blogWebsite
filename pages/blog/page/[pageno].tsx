@@ -73,7 +73,7 @@ const Pagination = ({ data, categories, pageNumbers, pageno }: props) => {
                     <AllCategories
                       key={`${key}item`}
                       title={category}
-                      href={`${BASE_URL}${ROUTES.blogCategoryRoute}/${category}`}
+                      href={`${ROUTES.blogCategoryRoute}/${category}`}
                     />
                     {key !== categories.length - 1 ? (
                       <hr key={`${key}divide`} className="mx-5" />

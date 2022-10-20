@@ -10,7 +10,7 @@ interface Props {
 
 const BlogCard = ({ itemData } : Props) => (
     <>
-      <Link href={`${BASE_URL}${ROUTES.blogDetailsRoute}/${itemData?.id}`}>
+      <Link href={`${ROUTES.blogDetailsRoute}/${itemData?.id}`}>
         <div className="shadow-lg rounded-md px-10 py-5 mt-2 hover:shadow-xl transition delay-75 cursor-pointer">
           <img
             className="rounded-md h-auto w-full"

@@ -1,13 +1,14 @@
 import React from "react";
 
 import HeaderComponent from "../components/HeaderComponent";
-import BlogCard from "../components/BlogCard"
+import BlogCard from "../components/BlogCard";
 import { BlogsStructure } from "../utils/interfaces";
 import PageHeading from "../components/PageHeading";
 import { BASE_URL, ROUTES } from "../utils/Constants";
-
+import absoluteUrl from "next-absolute-url";
+// const BASE_URL = process.env.VERCEL_URL;
 interface props {
-  data ?: BlogsStructure[];
+  data?: BlogsStructure[];
 }
 
 const index = ({ data }: props) => {
@@ -26,11 +27,8 @@ const index = ({ data }: props) => {
   );
 };
 
-
-
 export async function getStaticProps(context) {
-
-
+  console.log(`${BASE_URL}`);
   const res = await fetch(`${BASE_URL}${ROUTES.blogsRoute}?latest=true`, {
     method: "GET",
   });
@@ -38,6 +36,5 @@ export async function getStaticProps(context) {
 
   return { props: { data } };
 }
-
 
 export default index;
