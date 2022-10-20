@@ -1,10 +1,11 @@
 import blogJson from "../blogJson.json";
 import {BLOGS_PER_PAGE} from '../../../utils/Constants'
+
 export default async (req, res) => {
   const {
     method,
     body,
-    query: { all, showme, categories, itemid, pageno, totalpages },
+    query: { latest, all, showme, categories, itemid, pageno, totalpages },
   } = req;
 
   switch (method) {
@@ -59,10 +60,14 @@ export default async (req, res) => {
             return res.status(200).json(result);
 
         }
-        for (let latestBlog = 0; latestBlog < 3; latestBlog++) {
-          result.push(blogJson[latestBlog]);
+        
+        if(latest == 'true'){
+
+          for (let latestBlog = 0; latestBlog < 3; latestBlog++) {
+            result.push(blogJson[latestBlog]);
+          }
+          return res.status(200).json(result);
         }
-        return res.status(200).json(result);
       } catch (error) {
         return res.status(400).json({ msg: error.message });
       }

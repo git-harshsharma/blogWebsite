@@ -30,7 +30,7 @@ const CategoryPage = ({ data, category, categories }: props) => {
             </div>
           </div>
           <div className="flex-auto w-1/4 ">
-            <div className="shadow-xl rounded-md px-5 py-5 mt-2 flex flex-col gap-2 sticky top-0">
+            <div className="shadow-xl rounded-md  py-5 mt-2 flex flex-col gap-2 sticky top-0">
               <Link href="/blog">
                 <span className="bg-slate-800 rounded-md p-2 w-full text-xl text-white">
                   Blog Categories
@@ -41,11 +41,11 @@ const CategoryPage = ({ data, category, categories }: props) => {
                 return (
                   <>
                     <AllCategories
-                      key={key}
+                      key={`${key}cat`}
                       title={category}
                       href={`${category}`}
                     />
-                    {key !== categories.length - 1 ? <hr /> : ""}
+                    {key !== categories.length - 1 ? <hr key={`${key}bar`} className="mx-5"/> : ""}
                   </>
                 );
               })}

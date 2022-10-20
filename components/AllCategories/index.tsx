@@ -9,7 +9,7 @@ interface props {
 const AllCategories = ({ title, href }: props) => (
   <>
     <Link href={href}>
-      <span className="cursor-pointer p-2 w-full text-md capitalize">
+      <span className="cursor-pointer mx-5 p-2 w-full text-md capitalize">
         {title}
       </span>
     </Link>

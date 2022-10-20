@@ -26,11 +26,18 @@ const index = ({ data }: props) => {
   );
 };
 
+
+
 export async function getStaticProps(context) {
-  const res = await fetch(`${BASE_URL}${ROUTES.blogsRoute}`);
+
+
+  const res = await fetch(`${BASE_URL}${ROUTES.blogsRoute}?latest=true`, {
+    method: "GET",
+  });
   const data = await res.json();
 
   return { props: { data } };
 }
+
 
 export default index;
