@@ -20,12 +20,12 @@ const BlogDetail = ({ data }: props) => {
   );
 };
 export async function getServerSideProps({
-  query: { blogdetails },
+  query: { blogdetail },
 }: {
-  query: { blogdetails: string };
+  query: { blogdetail: string };
 }) {
   const res = await fetch(
-    `${BASE_URL}${ROUTES.blogsRoute}?itemid=${blogdetails}`
+    `${BASE_URL}${ROUTES.blogsRoute}?itemid=${blogdetail}`
   );
   let data = await res.json();
   data = await data[0];
