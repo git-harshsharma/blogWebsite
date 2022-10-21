@@ -1,5 +1,5 @@
 import blogJson from "../blogJson.json";
-import {BLOGS_PER_PAGE} from '../../../utils/Constants'
+import { BLOGS_PER_PAGE } from "../../../utils/Constants";
 
 export default async (req, res) => {
   const {
@@ -36,33 +36,30 @@ export default async (req, res) => {
           return res.status(200).json(result);
         }
 
-        if(pageno){
+        if (pageno) {
           let itemPerPage = BLOGS_PER_PAGE;
           let lastItem = itemPerPage * pageno;
           let firstItem = lastItem - itemPerPage;
 
           for (let pageblog = firstItem; pageblog < lastItem; pageblog++) {
-            if(blogJson[pageblog]){
-
+            if (blogJson[pageblog]) {
               result.push(blogJson[pageblog]);
             }
           }
           return res.status(200).json(result);
         }
 
-        if(totalpages=='true'){
-            let numberOfItems = Math.ceil(blogJson.length / BLOGS_PER_PAGE);
+        if (totalpages == "true") {
+          let numberOfItems = Math.ceil(blogJson.length / BLOGS_PER_PAGE);
 
-            for(let pn = 1; pn <= numberOfItems; pn++) {
-              result.push(pn);
-            }
+          for (let pn = 1; pn <= numberOfItems; pn++) {
+            result.push(pn);
+          }
 
-            return res.status(200).json(result);
-
+          return res.status(200).json(result);
         }
-        
-        if(latest == 'true'){
 
+        if (latest == "true") {
           for (let latestBlog = 0; latestBlog < 3; latestBlog++) {
             result.push(blogJson[latestBlog]);
           }
@@ -71,7 +68,7 @@ export default async (req, res) => {
       } catch (error) {
         return res.status(400).json({ msg: error.message });
       }
-      
+
     default:
       return res.status(400).json({ msg: "This method not support" });
   }
