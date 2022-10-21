@@ -9,9 +9,9 @@ import AllCategories from "../../../components/AllCategories";
 import { BASE_URL, ROUTES } from "../../../utils/Constants";
 
 interface props {
-  data: BlogsStructure[];
-  category: string;
-  categories: string[];
+  data?: BlogsStructure[];
+  category?: string;
+  categories?: string[];
 }
 
 const CategoryPage = ({ data, category, categories }: props) => {
