@@ -5,13 +5,14 @@ import BlogCard from "../components/BlogCard";
 import { BlogsStructure } from "../utils/interfaces";
 import PageHeading from "../components/PageHeading";
 import { BASE_URL, ROUTES } from "../utils/Constants";
-import absoluteUrl from "next-absolute-url";
-// const BASE_URL = process.env.VERCEL_URL;
+import {server } from "../utils/config"
+
 interface props {
   data?: BlogsStructure[];
 }
 
 const index = ({ data }: props) => {
+  console.log(`server is ${server}`)
   return (
     <>
       <HeaderComponent />
@@ -28,8 +29,8 @@ const index = ({ data }: props) => {
 };
 
 export async function getStaticProps(context) {
-  console.log(`${BASE_URL}`);
-  const res = await fetch(`${BASE_URL}${ROUTES.blogsRoute}?latest=true`, {
+  console.log(`server is ${server}`)
+   const res = await fetch(`${BASE_URL}${ROUTES.blogsRoute}?latest=true`, {
     method: "GET",
   });
   const data = await res.json();

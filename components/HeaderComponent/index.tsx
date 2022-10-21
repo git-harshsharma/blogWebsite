@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import SearchedItem from "../SearchedItem";
 import { BlogsStructure } from "../../utils/interfaces";
-import { BASE_URL, ROUTES } from "../../utils/Constants";
+import { ROUTES } from "../../utils/Constants";
 
 const HeaderComponent = () => {
   const [data, setData] = useState<BlogsStructure[]>([]);

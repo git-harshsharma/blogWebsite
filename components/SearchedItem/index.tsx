@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 import { BlogsStructure } from "../../utils/interfaces";
-import { BASE_URL, ROUTES } from "../../utils/Constants";
+import {  ROUTES } from "../../utils/Constants";
 
 interface props {
   itemData?: BlogsStructure;
@@ -11,7 +11,7 @@ interface props {
 const SearchedItem = ({ itemData }: props) => {
   return (
     <>
-      <Link href={`${BASE_URL}${ROUTES.blogDetailsRoute}/${itemData?.id}`}>
+      <Link href={`${ROUTES.blogDetailsRoute}/${itemData?.id}`}>
         <div className="shadow-lg rounded-md px-10 py-5 mt-2 hover:shadow-xl transition delay-75 cursor-pointer">
           <div className="flex justify-between item-center mt-2">
             <span className="text-slate-500">{itemData?.date}</span>

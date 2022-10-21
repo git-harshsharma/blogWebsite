@@ -1,5 +1,10 @@
-// export const BASE_URL = "http://localhost:3000";
-export const BASE_URL = process.env.VERCEL_URL;
+//export const BASE_URL = "http://localhost:3000";
+const dev = process.env.NODE_ENV !== 'production';
+
+const server = dev ? 'http://localhost:3000' : 'https://blogwebsite-pi.vercel.app';
+
+export const BASE_URL = server;
+
 export const ROUTES = {
   blogsRoute: "/api/blogs",
 
