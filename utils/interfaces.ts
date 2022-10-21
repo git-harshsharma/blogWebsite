@@ -1,5 +1,5 @@
 export interface BlogsStructure {
-  id:number;
+  id: number;
   title: String;
   description: String;
   date: String;

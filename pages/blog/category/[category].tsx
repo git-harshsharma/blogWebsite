@@ -9,7 +9,7 @@ import AllCategories from "../../../components/AllCategories";
 import { BASE_URL, ROUTES } from "../../../utils/Constants";
 
 interface props {
-  data: any;
+  data: BlogsStructure[];
   category: string;
   categories: string[];
 }
@@ -35,7 +35,6 @@ const CategoryPage = ({ data, category, categories }: props) => {
                 <span className="bg-slate-800 rounded-md p-2 w-full text-xl text-white">
                   Blog Categories
                 </span>
-                
               </Link>
               {categories.map((category: string, key: number) => {
                 return (
@@ -45,7 +44,11 @@ const CategoryPage = ({ data, category, categories }: props) => {
                       title={category}
                       href={`${category}`}
                     />
-                    {key !== categories.length - 1 ? <hr key={`${key}bar`} className="mx-5"/> : ""}
+                    {key !== categories.length - 1 ? (
+                      <hr key={`${key}bar`} className="mx-5" />
+                    ) : (
+                      ""
+                    )}
                   </>
                 );
               })}

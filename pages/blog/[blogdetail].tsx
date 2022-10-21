@@ -6,7 +6,7 @@ import { BASE_URL, ROUTES } from "../../utils/Constants";
 import { BlogsStructure } from "../../utils/interfaces";
 
 interface props {
-  data ?: BlogsStructure
+  data?: BlogsStructure;
 }
 
 const BlogDetail = ({ data }: props) => {

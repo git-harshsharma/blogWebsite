@@ -13,4 +13,4 @@ const PageHeading = ({ pageHeading }: Props) => {
   );
 };
 
-export default PageHeading
+export default PageHeading;

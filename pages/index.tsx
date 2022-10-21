@@ -6,13 +6,11 @@ import { BlogsStructure } from "../utils/interfaces";
 import PageHeading from "../components/PageHeading";
 import { BASE_URL, ROUTES } from "../utils/Constants";
 
-
 interface props {
   data?: BlogsStructure[];
 }
 
 const index = ({ data }: props) => {
-  
   return (
     <>
       <HeaderComponent />
@@ -29,8 +27,7 @@ const index = ({ data }: props) => {
 };
 
 export async function getServerSideProps(context) {
- 
-   const res = await fetch(`${BASE_URL}${ROUTES.blogsRoute}?latest=true`, {
+  const res = await fetch(`${BASE_URL}${ROUTES.blogsRoute}?latest=true`, {
     method: "GET",
   });
   const data = await res.json();

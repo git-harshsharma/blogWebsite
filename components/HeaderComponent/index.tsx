@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
 import SearchedItem from "../SearchedItem";
@@ -19,11 +19,10 @@ const HeaderComponent = () => {
     listUniqueTags();
   }, []);
 
-  
-  const searchBlogs = (value: string) => {
+  const searchBlogs = (value: string): void => {
     setSearchString(value);
- 
-    let filterData:BlogsStructure[] = [];
+
+    let filterData: BlogsStructure[] = [];
 
     filterData = data.filter(
       (item) =>
@@ -37,8 +36,6 @@ const HeaderComponent = () => {
       setSearchedData([]);
     }
   };
-
-
 
   return (
     <>
