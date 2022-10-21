@@ -28,7 +28,7 @@ const index = ({ data }: props) => {
   );
 };
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   console.log(`server is ${server}`)
    const res = await fetch(`${BASE_URL}${ROUTES.blogsRoute}?latest=true`, {
     method: "GET",

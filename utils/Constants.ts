@@ -1,7 +1,7 @@
 //export const BASE_URL = "http://localhost:3000";
 const dev = process.env.NODE_ENV !== 'production';
 
-const server = dev ? 'http://localhost:3000' : 'https://blogwebsite-pi.vercel.app';
+const server = dev ? 'http://localhost:3000' : 'https://blogwebsite-three.vercel.app';
 
 export const BASE_URL = server;
 
