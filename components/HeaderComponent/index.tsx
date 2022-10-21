@@ -84,10 +84,10 @@ const HeaderComponent = () => {
           </div>
           <div className="uppercase flex justify-evenly w-40">
             <Link href={`${ROUTES.blogsPageRoute}/1`}>BLOG</Link>
-            <Link href="/about">About</Link>
+            <span>About</span>
           </div>
         </div>
-        <div className="bg-slate-500 py-2 px-14 relative">
+        <div className="bg-slate-500 py-4 px-14 relative">
           <div className="flex justify-end items-center">
             <div className="bg-white w-56 text-sm flex rounded-full justify-around overflow-hidden items-center">
               <input
