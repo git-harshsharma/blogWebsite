@@ -22,7 +22,7 @@ const HeaderComponent = () => {
   
   const searchBlogs = (value: string) => {
     setSearchString(value);
-    console.log(value);
+ 
     let filterData:BlogsStructure[] = [];
 
     filterData = data.filter(
