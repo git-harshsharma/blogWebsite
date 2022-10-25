@@ -1,5 +1,5 @@
-import blogJson from "../blogJson.json";
-import { BLOGS_PER_PAGE } from "../../../utils/Constants";
+import blogJson from "../blogs.json";
+import { BLOGS_PER_PAGE } from "../../../utils/constants";
 
 export default async (req, res) => {
   const {
@@ -34,7 +34,7 @@ export default async (req, res) => {
 
         if (itemid) {
           result = blogJson.filter((item) => item.id == itemid);
-          return res.status(200).json(result);
+          return res.status(200).json(result[0]);
         }
 
         if (pageno) {

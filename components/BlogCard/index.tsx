@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 import { BlogsStructure } from "../../utils/interfaces";
-import { ROUTES } from "../../utils/Constants";
+import { ROUTES } from "../../utils/constants";
 
 interface Props {
   itemData?: BlogsStructure;

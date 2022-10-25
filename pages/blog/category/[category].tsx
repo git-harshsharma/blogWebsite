@@ -6,7 +6,8 @@ import PageHeading from "../../../components/PageHeading";
 import BlogCard from "../../../components/BlogCard";
 import { BlogsStructure } from "../../../utils/interfaces";
 import AllCategories from "../../../components/AllCategories";
-import { BASE_URL, ROUTES } from "../../../utils/Constants";
+import { BASE_URL, ROUTES } from "../../../utils/constants";
+import fetchData from "../../../utils/Services/FetchService";
 
 interface props {
   data?: BlogsStructure[];
@@ -31,7 +32,7 @@ const CategoryPage = ({ data, category, categories }: props) => {
           </div>
           <div className="flex-auto w-1/4 ">
             <div className="shadow-xl rounded-md  py-5 mt-2 flex flex-col gap-2 sticky top-0">
-              <Link href="/blog">
+              <Link href={`${ROUTES.blogDetailsRoute}`}>
                 <span className="bg-slate-800 rounded-md p-2 w-full text-xl text-white">
                   Blog Categories
                 </span>
@@ -65,11 +66,9 @@ export async function getServerSideProps({
 }: {
   query: { category: string };
 }) {
-  const res = await fetch(`${BASE_URL}${ROUTES.blogsRoute}?showme=${category}`);
-  const data = await res.json();
+  const data = await fetchData(`${BASE_URL}${ROUTES.blogsRoute}?showme=${category}`);
 
-  const resCat = await fetch(`${BASE_URL}${ROUTES.blogsRoute}?categories=all`);
-  const categories = await resCat.json();
+  const categories = await fetchData(`${BASE_URL}${ROUTES.blogsRoute}?categories=all`);
 
   return { props: { data, category, categories } };
 }

@@ -6,20 +6,20 @@ import PageHeading from "../../../components/PageHeading";
 import { BlogsStructure } from "../../../utils/interfaces";
 import BlogCard from "../../../components/BlogCard";
 import AllCategories from "../../../components/AllCategories";
-import { BASE_URL, ROUTES, BLOGS_PER_PAGE } from "../../../utils/Constants";
+import { BASE_URL, ROUTES, BLOGS_PER_PAGE } from "../../../utils/constants";
 import PageNumber from "../../../components/PageNumber";
 import NavPage from "../../../components/PageNumber/NavPage";
+import fetchData from "../../../utils/Services/FetchService";
 
 interface props {
   data: BlogsStructure[];
   categories: string[];
-  pageNumbers:number[];
-  pageno:number;
+  pageNumbers: number[];
+  pageno: number;
 }
 const Pagination = ({ data, categories, pageNumbers, pageno }: props) => {
-
-  let nextpage:number = Number(pageno)+1;
-  let prevpage:number = Number(pageno)-1;
+  let nextpage: number = Number(pageno) + 1;
+  let prevpage: number = Number(pageno) - 1;
 
   return (
     <>
@@ -36,29 +36,46 @@ const Pagination = ({ data, categories, pageNumbers, pageno }: props) => {
             </div>
             <div className="mt-10">
               {pageno > 1 ? (
-                <NavPage href={`${prevpage}`} active={true} text="<" key={'prevnav_1'} />
+                <NavPage
+                  href={`${prevpage}`}
+                  active={true}
+                  text="<"
+                  key={"prevnav_1"}
+                />
               ) : (
-                <NavPage active={false} text="<" key={'prevnav_2'}/>
+                <NavPage active={false} text="<" key={"prevnav_2"} />
               )}
 
-              {pageNumbers.map((singlePage:number, key: number) => {
+              {pageNumbers.map((singlePage: number, key: number) => {
                 return (
                   <>
                     {singlePage == pageno ? (
-                      <PageNumber number={singlePage} key={`${key}pgno1`} active={true} />
+                      <PageNumber
+                        number={singlePage}
+                        key={`${key}pgno1`}
+                        active={true}
+                      />
                     ) : (
-                      <PageNumber number={singlePage} key={`${key}pgno2`} active={false} />
+                      <PageNumber
+                        number={singlePage}
+                        key={`${key}pgno2`}
+                        active={false}
+                      />
                     )}
                   </>
                 );
               })}
 
               {pageno < pageNumbers.length ? (
-                <NavPage href={`${nextpage}`} active={true} text=">" key={'nextnav_1'}/>
+                <NavPage
+                  href={`${nextpage}`}
+                  active={true}
+                  text=">"
+                  key={"nextnav_1"}
+                />
               ) : (
-                <NavPage active={false} text=">" key={'nextnav_2'} />
+                <NavPage active={false} text=">" key={"nextnav_2"} />
               )}
-
             </div>
           </div>
           <div className="flex-auto w-1/4 ">
@@ -96,16 +113,17 @@ export async function getServerSideProps({
 }: {
   query: { pageno: number };
 }) {
-  const res = await fetch(`${BASE_URL}${ROUTES.blogsRoute}?pageno=${pageno}`);
-  const data = await res.json();
+  const data = await fetchData(
+    `${BASE_URL}${ROUTES.blogsRoute}?pageno=${pageno}`
+  );
 
-  const resPageNumber = await fetch(
+  const pageNumbers = await fetchData(
     `${BASE_URL}${ROUTES.blogsRoute}?totalpages=true`
   );
-  let pageNumbers = await resPageNumber.json();
 
-  const resCat = await fetch(`${BASE_URL}${ROUTES.blogsRoute}?categories=all`);
-  const categories = await resCat.json();
+  const categories = await fetchData(
+    `${BASE_URL}${ROUTES.blogsRoute}?categories=all`
+  );
 
   return { props: { data, categories, pageNumbers, pageno } };
 }

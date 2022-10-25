@@ -3,7 +3,8 @@ import Link from "next/link";
 
 import SearchedItem from "../SearchedItem";
 import { BlogsStructure } from "../../utils/interfaces";
-import { ROUTES } from "../../utils/Constants";
+import { ROUTES } from "../../utils/constants";
+import fetchData from "../../utils/Services/FetchService"
 
 const HeaderComponent = () => {
   const [data, setData] = useState<BlogsStructure[]>([]);
@@ -12,9 +13,8 @@ const HeaderComponent = () => {
 
   useEffect((): void => {
     async function listUniqueTags() {
-      const res = await fetch(`${ROUTES.blogsRoute}?all=true`);
-      const fetchData = await res.json();
-      setData(fetchData);
+      const AllData = await fetchData(`${ROUTES.blogsRoute}?all=true`);
+      setData(AllData);
     }
     listUniqueTags();
   }, []);
@@ -110,8 +110,8 @@ const HeaderComponent = () => {
           {searchedData.length !== 0 && searchString.length !== 0 ? (
             <>
               <div
-                className="absolute bg-white rounded-md border-2 mt-6 border-slate-800 p-8"
-                style={{ right: "3%", zIndex: "1", width: "45%" }}
+                className="absolute bg-white rounded-md border-2 mt-6 border-slate-800 p-8 overflow-auto"
+                style={{ right: "3%", zIndex: "1", width: "45%", maxHeight: "80vh" }}
               >
                 <span className="text-xl">{searchedData.length} Results</span>
                 {searchedData.map((itemData, key) => {

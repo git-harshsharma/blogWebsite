@@ -2,8 +2,9 @@ import React from "react";
 
 import HeaderComponent from "../../components/HeaderComponent";
 import BlogDetails from "../../components/BlogDetails";
-import { BASE_URL, ROUTES } from "../../utils/Constants";
+import { BASE_URL, ROUTES } from "../../utils/constants";
 import { BlogsStructure } from "../../utils/interfaces";
+import fetchData from "../../utils/Services/FetchService";
 
 interface props {
   data?: BlogsStructure;
@@ -24,11 +25,11 @@ export async function getServerSideProps({
 }: {
   query: { blogdetail: string };
 }) {
-  const res = await fetch(
+  let data = await fetchData(
     `${BASE_URL}${ROUTES.blogsRoute}?itemid=${blogdetail}`
   );
-  let data = await res.json();
-  data = await data[0];
+
+  // data = await data[0];
 
   return { props: { data } };
 }
