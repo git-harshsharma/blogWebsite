@@ -5,7 +5,7 @@ import BlogCard from "../components/BlogCard";
 import { BlogsStructure } from "../utils/interfaces";
 import PageHeading from "../components/PageHeading";
 import { BASE_URL, ROUTES } from "../utils/constants";
-import fetchData from "../utils/Services/FetchService";
+import fetchData from "../utils/services/fetchservice";
 
 interface props {
   data?: BlogsStructure[];
@@ -27,7 +27,7 @@ const index = ({ data }: props) => {
   );
 };
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const data = await fetchData(`${BASE_URL}${ROUTES.blogsRoute}?latest=true`);
 
   return { props: { data } };

@@ -4,7 +4,7 @@ import HeaderComponent from "../../components/HeaderComponent";
 import BlogDetails from "../../components/BlogDetails";
 import { BASE_URL, ROUTES } from "../../utils/constants";
 import { BlogsStructure } from "../../utils/interfaces";
-import fetchData from "../../utils/Services/FetchService";
+import fetchData from "../../utils/services/fetchservice";
 
 interface props {
   data?: BlogsStructure;

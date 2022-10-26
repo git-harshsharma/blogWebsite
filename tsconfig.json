@@ -24,7 +24,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "utils/Services/FetchService.ts"  ],
+, "utils/services/fetchservice.ts"  ],
   "exclude": [
     "node_modules"
   ]

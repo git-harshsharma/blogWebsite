@@ -9,7 +9,6 @@ export const BASE_URL = server;
 
 export const ROUTES = {
   blogsRoute: "/api/blogs",
-
   blogDetailsRoute: "/blog",
   blogsPageRoute: "/blog/page",
   blogCategoryRoute: "/blog/category",

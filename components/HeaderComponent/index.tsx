@@ -4,7 +4,7 @@ import Link from "next/link";
 import SearchedItem from "../SearchedItem";
 import { BlogsStructure } from "../../utils/interfaces";
 import { ROUTES } from "../../utils/constants";
-import fetchData from "../../utils/Services/FetchService"
+import fetchData from "../../utils/services/fetchservice"
 
 const HeaderComponent = () => {
   const [data, setData] = useState<BlogsStructure[]>([]);
