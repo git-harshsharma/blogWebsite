@@ -9,6 +9,7 @@ import AllCategories from "../../../components/AllCategories";
 import { BASE_URL, ROUTES } from "../../../utils/constants";
 import fetchData from "../../../utils/services/fetchservice";
 
+
 interface props {
   data?: BlogsStructure[];
   category?: string;
