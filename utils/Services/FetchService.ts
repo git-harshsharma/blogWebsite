@@ -1,6 +1,6 @@
 
 
-const FetchService = async (URL: string) => {
+const fetchservice = async (URL: string) => {
   
     const res = await fetch(URL);
     const data = await res.json();
@@ -9,4 +9,4 @@ const FetchService = async (URL: string) => {
 }
 
 
-export default FetchService;
+export default fetchservice;
