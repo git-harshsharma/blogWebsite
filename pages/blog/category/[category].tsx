@@ -7,7 +7,7 @@ import BlogCard from "../../../components/BlogCard";
 import { BlogsStructure } from "../../../utils/interfaces";
 import AllCategories from "../../../components/AllCategories";
 import { BASE_URL, ROUTES } from "../../../utils/constants";
-import fetchData from "../../../utils/Services/FetchService";
+import fetchData from "../../../utils/services/fetchservice";
 
 interface props {
   data?: BlogsStructure[];

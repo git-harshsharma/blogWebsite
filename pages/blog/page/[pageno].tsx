@@ -9,7 +9,7 @@ import AllCategories from "../../../components/AllCategories";
 import { BASE_URL, ROUTES, BLOGS_PER_PAGE } from "../../../utils/constants";
 import PageNumber from "../../../components/PageNumber";
 import NavPage from "../../../components/PageNumber/NavPage";
-import fetchData from "../../../utils/Services/FetchService";
+import fetchData from "../../../utils/services/fetchservice";
 
 interface props {
   data: BlogsStructure[];
